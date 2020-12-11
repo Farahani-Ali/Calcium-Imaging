@@ -10,5 +10,5 @@ out
 gen
 Datasets/
 venv/
-venv/Lib/site-packages/
+__pycache__/
 
