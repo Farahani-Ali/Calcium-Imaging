@@ -1,8 +1,8 @@
-import numpy as np
+#import numpy as np
 import pandas as pd
 import re
 
-
+"""
 dt = pd.read_csv("./Datasets/F_Plus_Glue.csv")
 
 #dt = dt[dt > 1]
@@ -16,3 +16,4 @@ def igroups(x):
 
 dt['new'] = dt.apply(lambda x : igroups(x),  axis = 1)
 print(dt)
+"""

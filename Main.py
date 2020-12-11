@@ -1,12 +1,8 @@
 from ActiveTime import ActiveTime
-from Spikes     import Spikes
-
+from Spikes import Spikes
 
 dataSetPath = "./Datasets/F_Plus_Glue.csv"
 
-#ActiveTime(dataSetPath)
+ActiveTime(dataSetPath)
 
-Spikes(dataSetPath)
-
-
-
+#Spikes(dataSetPath)
