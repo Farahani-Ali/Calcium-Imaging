@@ -8,8 +8,8 @@
 *.iml
 out
 gen
-Datasets/
-venv/
-__pycache__/
+../Datasets/
+../__pycache__/
+__init__.py
 
 
