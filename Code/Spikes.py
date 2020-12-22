@@ -9,7 +9,6 @@ class Spikes:
         self.dt = pd.read_csv(dataSetPath)
         self.dt = self.dt.T
         self.dt['IncreasingSequences'] = self.dt.apply(lambda x: self.find_all_increasing_sequences(), axis=1)
-
         # self.dt['NumberOfIncreasingSequences'] = self.dt["IncreasingSequences"].apply(lambda x: len(x))
         # self.dt['SpikeDuration'] = self.dt['SpikeLength'].sum(axis=1)
 
