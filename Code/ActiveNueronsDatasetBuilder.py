@@ -15,7 +15,6 @@ class ActiveNueronsDatasetBuilder:
         self.drop_first_column(sequence_status_dataset)
         self.find_first_active_time(sequence_status_dataset)
         self.find_activation_length(sequence_status_dataset)
-        print(sequence_status_dataset)
         self.find_activation_length_secods(sequence_status_dataset)
         self.find_minimum_active_period(sequence_status_dataset)
         self.find_maximum_active_period(sequence_status_dataset)
