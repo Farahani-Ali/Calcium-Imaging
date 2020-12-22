@@ -22,3 +22,10 @@ In this class we do the following step
 * finds the duration (in seconds) for each period of activation 
 * finds average of time a neuron was active
 * gives the minimum and maximum periods of activation for a neuron cell 
+
+
+## Spike class
+
+Spike is defined as any "non-decreasing" sequence of values (of a neuron's brighness) that meets two following requirements:
+1. difference of the highest and lowest number of sequence is greater or equal to .1
+2. the highest number is greater than 1.2
