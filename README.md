@@ -7,7 +7,7 @@ A neron cell is defined active if the cell's brightness is equal or above 1.2.
 ## Dataset class 
 
 In this class, we do the following steps
-1- read the dataset
+* read the dataset
 2- drop the "time column"
 3- replace any cell which has a value greater than an equal to 1.2 with "S" and any value bellow 1.2 with "D"
 
