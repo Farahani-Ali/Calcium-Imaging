@@ -19,5 +19,6 @@ In this class we do the following step
 * count the numebr of times a cell was active 
 * drops the sequence S/D sequence 
 * Finds the time when a cell became active for the first time
-
-
+* finds the duration (in seconds) for each period of activation 
+* finds average of time a neuron was active
+* gives the minimum and maximum periods of activation for a neuron cell 
