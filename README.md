@@ -29,3 +29,11 @@ In this class we do the following step
 Spike is defined as any "non-decreasing" sequence of values (of a neuron's brighness) that meets two following requirements:
 1. difference of the highest and lowest number of sequence is greater or equal to .1
 2. the highest number is greater than 1.2
+
+## AreaUnderCurve class
+
+Finds the area under curve and above brighness of 1. Bellow line 1 a cell is considered as dead so we ignore anything bellow that. 
+
+## Slope class
+
+finds the slope between the cell before treatment and the pick afterwards 
