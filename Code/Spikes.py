@@ -43,20 +43,17 @@ class Spikes:
     def slope_of_first_pick(self):
         self.dt['slope'] = self.dt["IncreasingSequences"]
 
-    def get_slope_for_a_spike (self, spike):
+    def get_slope_for_a_spike(self, spike):
         min, *_, max = spike
         max_min_difference = max - min
         time = len(spike)
-        slope = max_min_difference/time
+        slope = max_min_difference / time
         return slope
 
     def slope_collector(self, increasing_sequences):
         slopes = [self.get_slope_for_a_spike(lst) for lst in increasing_sequences]
-        if len(slopes) >0 :
+        if len(slopes) > 0:
             return slopes[0]
-
-
-
 
     def spike_counter(self):
         self.dt["spikeCounts"] = self.dt['spikes'].apply(lambda x: len(x))
