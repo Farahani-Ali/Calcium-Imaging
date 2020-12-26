@@ -22,23 +22,3 @@ def area_under_curve_calculator(curve_values, time_step):
 dt["are_under_curve"] = dt["list_of_all_values"].apply(lambda x: area_under_curve_calculator(x, time_step= 4))
 print(dt)
 
-
-
-
-
-
-
-
-
-
-#area_under_curve(dataset.dt)
-
-
-# Compute the area using the composite trapezoidal rule.
-#area = trapz([0.98 ,1.20  ,  0.85,  1.19,  1.10], dx=4)
-#print("area =", area)
-
-# Compute the area using the composite Simpson's rule.
-#area = simps(y, dx=4)
-#print("area =", area)
-
