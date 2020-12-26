@@ -9,12 +9,14 @@ class Spikes:
 
     def __init__(self, dataset):
         self.dt = dataset.T
+        #self.dt['IncreasingSequences'] = self.dt.agg(list, axis=1)
         self.dt['IncreasingSequences'] = self.dt.apply(lambda x: self.non_decreasing_sequence_for_row(x), axis=1)
         # print(self.dt)
         self.dt["spikes"] = self.dt["IncreasingSequences"].apply(self.spike_finder)
         self.spike_counter()
         self.dt["spikeSlope"] = self.dt["spikes"].apply(self.slope_collector)
         print(self.dt)
+        self.write_To()
 
         # self.dt['NumberOfIncreasingSequences'] = self.dt["IncreasingSequences"].apply(lambda x: len(x))
 
@@ -32,7 +34,7 @@ class Spikes:
         non_decreasing_values = [row[start:end] for start, end in slices if end - start > 1]
         return non_decreasing_values
 
-    # filters the increasing sequences to see if a sequence is spike or not
+# filters the increasing sequences to see if a sequence is spike or not
     def filter_spike(self, increasing_sequence):
         mi, *_, ma = increasing_sequence
         return ma > 1.2 and ma - mi > 0.1
@@ -46,8 +48,8 @@ class Spikes:
     def get_slope_for_a_spike(self, spike):
         min, *_, max = spike
         max_min_difference = max - min
-        time = len(spike)
-        slope = max_min_difference / time
+        time = len(spike)-1  # -1 is because we want the time between first and last element
+        slope = max_min_difference / (time * 4)
         return slope
 
     def slope_collector(self, increasing_sequences):
@@ -61,4 +63,4 @@ class Spikes:
         # return increasing_sequences
 
     def write_To(self):
-        self.dt.to_csv("./Datasets/Spikes.csv")
+        self.dt.to_csv("../Datasets/Spikes.csv")
