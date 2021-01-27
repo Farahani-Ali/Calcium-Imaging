@@ -2,7 +2,6 @@
 
 This project aims to analyse data of reaction of neruons which are treated with Glutamine and KCL with positive and negative conditions. This Proejct was funded through NSF (National Science Foundation). 
 
-A neron cell is defined active if the cell's brightness is equal or above 1.2. 
 
 ## Dataset class 
 
