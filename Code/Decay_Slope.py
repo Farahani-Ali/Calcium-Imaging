@@ -42,23 +42,16 @@ def get_decay_slope_for_all_dataset(data):
 
     for indx in range(len(data)):
 
-        row = get_row_as_list(indx, data)
-        print("row is:", row)
-
-        value_max, max_indx = find_max_in_a_row(row)
-        print("value max, max indx", value_max, max_indx)
-
-        new_row = get_sublist_after_max(max_indx,row)
-        print("new row is", new_row)
-
-        value_min, min_indx = get_min_in_a_row(new_row)
-        print("value min, min indx", value_min, min_indx)
-
-        decay_slope = calculate_decrease_slope(value_max,min_indx, value_min)
-        print("decay slppe is:", decay_slope)
-
+        row = get_row_as_list(indx, data)        
+        value_max, max_indx = find_max_in_a_row(row)        
+        new_row = get_sublist_after_max(max_indx,row)        
+        value_min, min_indx = get_min_in_a_row(new_row)       
+        decay_slope = calculate_decrease_slope(value_max,min_indx, value_min)        
         data.iloc[indx,loc] = decay_slope
+        
     return data
 
 
-print(get_decay_slope_for_all_dataset(data))
+dt0 = get_decay_slope_for_all_dataset(data)
+dt0.to_csv("../Datasets/decay2.csv")
+
