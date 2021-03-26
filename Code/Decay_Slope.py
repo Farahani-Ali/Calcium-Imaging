@@ -62,12 +62,3 @@ def get_decay_slope_for_all_dataset(data):
 
 
 print(get_decay_slope_for_all_dataset(data))
-
-
-"""
-max_indx0 = find_max_in_a_row(get_row_as_list(2,data))
-data0 = get_row_as_list(2,data)
-list_after_max = get_sublist_after_max(max_indx0, data0)
-print(list_after_max)
-print(get_min_in_a_rown(list_after_max))
-"""
