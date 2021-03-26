@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-
 class Dataset:
     def __init__(self, dataSetPath):
         self.dt = pd.read_csv(dataSetPath)

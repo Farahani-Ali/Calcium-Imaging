@@ -16,7 +16,8 @@ class Spikes:
         self.spike_counter()
         self.dt["spikeSlope"] = self.dt["spikes"].apply(self.slope_collector)
         print(self.dt)
-        self.write_To()
+        self.save_to_csv()
+        #self.save_to_jason()
 
         # self.dt['NumberOfIncreasingSequences'] = self.dt["IncreasingSequences"].apply(lambda x: len(x))
 
@@ -62,5 +63,9 @@ class Spikes:
 
         # return increasing_sequences
 
-    def write_To(self):
+    def save_to_csv(self):
         self.dt.to_csv("../Datasets/Spikes.csv")
+
+    def save_to_jason(self):
+        self.dt['spikes'].to_json( "../Datasets/Spikes.json")
+        #self.dt['IncreasingSequences'].to_json( "../Datasets/Spikes.json")

@@ -19,9 +19,9 @@ class ActiveNueronsDatasetBuilder:
         self.find_minimum_active_period(sequence_status_dataset)
         self.find_maximum_active_period(sequence_status_dataset)
         self.sum_of_activat_time_seconds(sequence_status_dataset)
-        print(sequence_status_dataset)
+        #print(sequence_status_dataset)
 
-        # self.write_to()
+        self.write_to(sequence_status_dataset)
 
     # Finds indices of each active sequence (when a neuron was active (status=S) and when it was not active (status= D))
     def find_active_sequence_indices(self, status, status_sequence):
@@ -73,3 +73,5 @@ class ActiveNueronsDatasetBuilder:
             lambda x: sum(x))
         return active_neurons_dataset
 
+    def write_to(self,dt):
+        dt.to_csv("../Datasets/ActivationTime.csv")

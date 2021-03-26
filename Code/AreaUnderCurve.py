@@ -7,11 +7,12 @@ from Dataset import Dataset
 
 
 
-data_set_path = "../Datasets/sample.csv"
+data_set_path = "../Datasets/Broken_Dataset/Fplus_KCIFirst/Fplus_KCIFirst3.csv"
 dataset = Dataset(data_set_path)
 dt = dataset.dt.T
 
 dt = dt.applymap(lambda x: x-1)
+dt[dt<0] = 0
 print(dt)
 dt['list_of_all_values'] = dt.agg(list, axis=1)
 
@@ -20,5 +21,9 @@ def area_under_curve_calculator(curve_values, time_step):
     return area_under_curve
 
 dt["are_under_curve"] = dt["list_of_all_values"].apply(lambda x: area_under_curve_calculator(x, time_step= 4))
-print(dt)
+#print(dt)
+
+dt.to_csv("../Datasets/areaUnderCurve.csv")
+
+
 
